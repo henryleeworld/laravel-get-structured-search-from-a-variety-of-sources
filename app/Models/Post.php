@@ -36,12 +36,12 @@ class Post extends Model implements Searchable
         return $this->belongsToMany(Category::class);
     }
 
-     public function getSearchResult(): SearchResult
-     {
-         return new SearchResult(
+    public function getSearchResult(): SearchResult
+    {
+        return new SearchResult(
             $this,
             $this->title,
             $this->post_text,
-         );
-     }
+        );
+    }
 }

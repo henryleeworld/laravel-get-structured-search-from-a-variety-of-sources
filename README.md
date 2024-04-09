@@ -1,4 +1,4 @@
-# Laravel 8 從各種來源進行結構化搜索
+# Laravel 10 從各種來源進行結構化搜索
 
 引入 spatie 的 laravel-searchable 套件來擴增從各種來源（例如：Eloquent 模型）進行結構化搜索，快速找到需要的資料。
 
@@ -26,5 +26,5 @@ $ php artisan migrate --seed
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/ZDRB0dX.png)
+![](https://i.imgur.com/2Y6XhBV.png)
 > 針對特定字詞尋找相關資訊

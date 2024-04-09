@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Post;
+use App\Models\User;
 use Spatie\Searchable\Search;
 
 class SearchController extends Controller
@@ -20,7 +20,7 @@ class SearchController extends Controller
 
     public function show() 
     {
-        $keyword = 'magnam';
+        $keyword = 'labore';
         $searchResults = $this->search->registerModel(User::class, 'name')
                                       ->registerModel(Post::class, ['title', 'post_text'])
                                       ->search($keyword);
