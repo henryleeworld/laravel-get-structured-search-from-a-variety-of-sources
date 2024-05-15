@@ -55,6 +55,7 @@ class User extends Authenticatable implements Searchable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed',
     ];
 
     public function posts()
