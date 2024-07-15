@@ -20,10 +20,10 @@ class SearchController extends Controller
 
     public function show() 
     {
-        $keyword = 'labore';
+        $keyword = 'facilis';
         $searchResults = $this->search->registerModel(User::class, 'name')
                                       ->registerModel(Post::class, ['title', 'post_text'])
                                       ->search($keyword);
-        echo '搜尋 ' . $keyword . ' 筆數：' . $searchResults->count() . PHP_EOL;
+        echo __('Search ') . $keyword . __(' number of records:') . $searchResults->count() . PHP_EOL;
     }
 }

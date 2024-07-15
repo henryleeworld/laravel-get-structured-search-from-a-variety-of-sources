@@ -8,7 +8,10 @@ use Illuminate\Database\Seeder;
 
 class PostsTableSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeders.
+     */
+    public function run(): void
     {
         $categories = Category::pluck('id');
 

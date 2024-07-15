@@ -7,19 +7,22 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeders.
+     */
+    public function run(): void
     {
         $users = [
             [
                 'id'             => 1,
-                'name'           => 'Admin',
+                'name'           => __('Admin'),
                 'email'          => 'admin@admin.com',
                 'password'       => 'password',
                 'remember_token' => null,
             ],
             [
                 'id'             => 2,
-                'name'           => 'User',
+                'name'           => __('User'),
                 'email'          => 'user@user.com',
                 'password'       => 'password',
                 'remember_token' => null,

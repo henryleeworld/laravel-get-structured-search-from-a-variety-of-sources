@@ -7,7 +7,10 @@ use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeders.
+     */
+    public function run(): void
     {
         $categories = [
             'Y7', 'Y8', 'Y9', 'Y10', 'Y11', 'Y12', 'Staff'
