@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,12 +13,13 @@ use Spatie\Searchable\SearchResult;
 
 class User extends Authenticatable implements Searchable
 {
+    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'name',
@@ -28,7 +30,7 @@ class User extends Authenticatable implements Searchable
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $hidden = [
         'password',
@@ -48,7 +50,10 @@ class User extends Authenticatable implements Searchable
         ];
     }
 
-    public function posts()
+    /**
+     * The posts that belong to the user.
+     */
+    public function posts(): BelongsToMany
     {
         return $this->belongsToMany(Post::class);
     }

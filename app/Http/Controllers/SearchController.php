@@ -18,9 +18,12 @@ class SearchController extends Controller
         $this->search = $search;
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function show() 
     {
-        $keyword = 'facilis';
+        $keyword = __('Gundam');
         $searchResults = $this->search->registerModel(User::class, 'name')
                                       ->registerModel(Post::class, ['title', 'post_text'])
                                       ->search($keyword);
